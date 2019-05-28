@@ -3,6 +3,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var context = canvas.getContext("2d");
+context.rotate(20 * Math.PI / 180);
 
 var img = new Image();
 img.src = "images/Nyancat.png";
@@ -34,7 +35,6 @@ function Hearth(x,y){
 
     this.show = function(){
     context.drawImage(img, this.x, this.y, 300, 100)
-    img.rotate(20 * Math.PI / 180);
     }
 }
 
