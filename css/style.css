@@ -18,11 +18,10 @@ html {
   }
 
   #myAnimation {
-    position: absolute;
+    position: fixed;
     display: none;
   } 
 
 #image01 {  
   width: 100%;
 }
-  

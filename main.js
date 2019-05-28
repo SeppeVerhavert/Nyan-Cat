@@ -1,4 +1,4 @@
-
+ 
 function doShow(){
     document.getElementById( "myAnimation" ).style.display = "block" ;
     setTimeout( "doHide()", 10000 ) ;
@@ -13,7 +13,6 @@ function playMusic(){
     audio.play();
 }
 
-
 function changeBackground(){
     document.body.style.background = "url('https://i.gifer.com/TPH.gif') repeat left top";
     setTimeout( "whiteBackground()", 10000 ) ;
@@ -25,15 +24,15 @@ function whiteBackground(){
 
 function myMove() {
     var elem = document.getElementById("myAnimation");   
-    var pos = -200;
-    var id = setInterval(frame, 9);
+    var pos = 0;
+    var id = setInterval(frame, 60);
     function frame() {
-        if (pos == 700) {
+        if (pos >= 100) {
         clearInterval(id);
         } else {
         pos++; 
-        elem.style.top = pos + 'px'; 
-        elem.style.left = pos + pos + 'px'; 
+        elem.style.top = pos + '%'; 
+        elem.style.left = pos + '%'; 
         }
     }
 }
