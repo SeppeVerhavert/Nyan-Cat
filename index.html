@@ -24,12 +24,13 @@
 <script>
 
 function doShow(){
-        document.getElementById( "myAnimation" ).style.display = "block" ;
-	}
+    document.getElementById( "myAnimation" ).style.display = "block" ;
+    setTimeout( "doHide()", 10000 ) ;
+}
 
-	function hideImage(){
-		setTimeout( "doShow()", 500 ) ;
-	}
+function doHide(){
+        document.getElementById( "myAnimation" ).style.display = "none" ;
+    }
 
 function myMove() {
     var elem = document.getElementById("myAnimation");   
