@@ -10,9 +10,46 @@
 </head>
 
 <body>
-    <div class="center">
-        <button id="button01" type="button">Doggo</button> 
+
+    <div onclick="doShow()" class="center">
+        <button onclick="myMove()">MAKE IT RAIN!</button> 
     </div>
+  
+
+    <div id ="myAnimation">
+        <img id="hiddenimage" src="images/Nyancat.png" alt="nyancat.png">   
+    </div>
+
+
+<script>
+
+function doShow(){
+        document.getElementById( "myAnimation" ).style.display = "block" ;
+	}
+
+	function hideImage(){
+		setTimeout( "doShow()", 500 ) ;
+	}
+
+function myMove() {
+    var elem = document.getElementById("myAnimation");   
+    var pos = -200;
+    var id = setInterval(frame, 2);
+    function frame() {
+        if (pos == 800) {
+        clearInterval(id);
+        } else {
+        pos++; 
+        elem.style.top = pos + 'px'; 
+        elem.style.left = pos + 'px'; 
+        }
+    }
+}
+
+document.getElementById("hiddenimage").style.transform = "rotate(45deg) scaleX(0.5) scaleY(0.5)";
+
+</script>
+
 </body>
 
 </html>

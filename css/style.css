@@ -6,3 +6,19 @@
     text-align: center;
     font-size: 18px;
   }
+  
+  #myContainer {
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+
+  #myAnimation {
+    position: absolute;
+    display: none;
+  } 
+
+#image01 {  
+  width: 100%;
+}
+  
