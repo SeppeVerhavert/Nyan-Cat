@@ -7,17 +7,17 @@ var context = canvas.getContext("2d");
 var img = new Image();
 img.src = "images/Nyancat.png";
 
-var noOHeatrts = 14
-var hearts = [];
-for(var i=0; i<noOHeatrts; i++){
+var noOCats = 14
+var cats = [];
+for(var i=0; i<noOCats; i++){
     var x = Math.floor(Math.random()*canvas.width);
     var y = Math.floor(Math.random()*canvas.height);
-    hearts[i] = new Hearth(x,y)
+    cats[i] = new Cat(x,y)
 }
 
 var speed = Math.floor(Math.random());
 
-function Hearth(x,y){
+function Cat(x,y){
     this.x = x;
     this.y = y;
 
@@ -34,16 +34,14 @@ function Hearth(x,y){
 
     this.show = function(){
     context.drawImage(img, this.x, this.y, 300, 100)
-    context.rotate(45 * Math.PI / 180);
     }
 }
 
 function draw(){
-    context.fillStyle = "black";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    for(var i=0; i<noOHeatrts;i++){
-        hearts[i].show();
-        hearts[i].fall();
+    for(var i=0; i<noOCats;i++){
+        cats[i].show();
+        cats[i].fall();
     }
 }
 
