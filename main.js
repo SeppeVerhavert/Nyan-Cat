@@ -1,11 +1,16 @@
- 
+//  ===========================
+//  BUTTON + MUSIC
+//  ===========================
+
 function doShow(){
     document.getElementById( "canvas" ).style.display = "block" ;
+    document.getElementById( "center" ).style.display = "none" ;
     setTimeout( "doHide()", 10000 ) ;
 }
 
 function doHide(){
     document.getElementById( "canvas" ).style.display = "none" ;
+    document.getElementById( "center" ).style.display = "block" ;
 }
 
 function playMusic(){
@@ -13,14 +18,9 @@ function playMusic(){
     audio.play();
 }
 
-function changeBackground(){
-    document.body.style.background = "url('https://i.gifer.com/TPH.gif') repeat left top";
-    setTimeout( "whiteBackground()", 10000 ) ;
-}
-
-function whiteBackground(){
-    document.body.style.background = "#f3f3f3";
-}
+//  ===========================
+//  RANDOM CATS
+//  ===========================
 
 var canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth;
@@ -30,9 +30,6 @@ var context = canvas.getContext("2d");
 
 var img = new Image();
 img.src = "images/Nyancat.png";
-
-var background = new Background();
-background.src = "images/background.gif";
 
 var noOCats = 14
 var cats = [];
@@ -58,13 +55,17 @@ function Cat(x,y){
     }
 
     this.show = function(){
-        
         context.drawImage(img, this.x-100, this.y-100, 300, 100)
     }
 }
 
 function draw(){    
-    context.drawImage(background)
+    var background = new Image();
+    background.src = "Assets/img/background.jpg";
+    
+    background.onload = function() {
+        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    }
 
     for(var i=0; i<noOCats;i++){
         cats[i].show();
@@ -77,14 +78,4 @@ function update(){
     window.requestAnimationFrame(update);
 }
 
-function changeBackground(){
-    document.body.style.background = "url(images/backrgound.gif) repeat left top";
-    setTimeout( "whiteBackground()", 10000 ) ;
-}
-
-function whiteBackground(){
-    document.body.style.background = "#f3f3f3";
-}
-
 update();
-
