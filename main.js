@@ -64,7 +64,7 @@ function draw(){
     background.src = "images/background.gif";
 
     background.onload = function(){
-        context.drawImage(background, -100, -100, canvas.width, canvas.height);
+        context.drawImage(background, 0, 0, canvas.width, canvas.height);
     }
 
     for(var i=0; i<noOCats;i++){
