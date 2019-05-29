@@ -5,7 +5,7 @@
 function doShow(){
     document.getElementById( "canvas" ).style.display = "block" ;
     document.getElementById( "center" ).style.display = "none" ;
-    setTimeout( "doHide()", 10000 ) ;
+    setTimeout( "doHide()", 9000 ) ;
 }
 
 function doHide(){
@@ -31,7 +31,7 @@ var context = canvas.getContext("2d");
 var img = new Image();
 img.src = "images/Nyancat.png";
 
-var noOCats = 14
+var noOCats = 20    
 var cats = [];
 for(var i=0; i<noOCats; i++){
     var x = Math.floor(Math.random()*canvas.width);
@@ -44,13 +44,13 @@ function Cat(x,y){
     this.y = y;
 
     this.fall = function(){
-        this.x = this.x+ 1;
-        this.y = this.y+ 1;
+        this.x = this.x+ 4;
+        this.y = this.y+ 2;
         if(this.y > canvas.height){
-            this.y = 0;
+            this.y = -100;
         }
         if(this.x > canvas.width){
-            this.x = 0;
+            this.x = -150;
         }
     }
 
@@ -61,7 +61,7 @@ function Cat(x,y){
 
 function draw(){    
     var background = new Image();
-    background.src = "images/background.gif";
+    background.src = "images/background.jpg";
 
     background.onload = function(){
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
