@@ -1,11 +1,11 @@
  
 function doShow(){
-    document.getElementById( "myAnimation" ).style.display = "block" ;
+    document.getElementById( "canvas" ).style.display = "block" ;
     setTimeout( "doHide()", 10000 ) ;
 }
 
 function doHide(){
-    document.getElementById( "myAnimation" ).style.display = "none" ;
+    document.getElementById( "canvas" ).style.display = "none" ;
 }
 
 function playMusic(){

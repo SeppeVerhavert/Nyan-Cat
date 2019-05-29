@@ -7,6 +7,9 @@ var context = canvas.getContext("2d");
 var img = new Image();
 img.src = "images/Nyancat.png";
 
+var background = new Background();
+background.src = "url('https://i.gifer.com/TPH.gif')";
+
 var noOCats = 14
 var cats = [];
 for(var i=0; i<noOCats; i++){
@@ -14,8 +17,6 @@ for(var i=0; i<noOCats; i++){
     var y = Math.floor(Math.random()*canvas.height);
     cats[i] = new Cat(x,y)
 }
-
-var speed = Math.floor(Math.random());
 
 function Cat(x,y){
     this.x = x;
@@ -33,12 +34,12 @@ function Cat(x,y){
     }
 
     this.show = function(){
-    context.drawImage(img, this.x, this.y, 300, 100)
+        context.drawImage(img, this.x100, this.y-100, 300, 100)
     }
 }
 
-function draw(){
-    context.fillRect(0, 0, canvas.width, canvas.height);
+function draw(){    
+    context.drawImage(background, this.x, this.y, canvas.width, canvas.height)  
     for(var i=0; i<noOCats;i++){
         cats[i].show();
         cats[i].fall();
