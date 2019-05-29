@@ -14,7 +14,7 @@ function doHide(){
 }
 
 function playMusic(){
-    var audio = new Audio('NyanCat.mp3');
+    var audio = new Audio('Assets/NyanCat.mp3');
     audio.play();
 }
 
@@ -29,7 +29,7 @@ canvas.height = window.innerHeight;
 var context = canvas.getContext("2d");
 
 var img = new Image();
-img.src = "images/Nyancat.png";
+img.src = "Assets/images/Nyancat.png";
 
 var noOCats = 20    
 var cats = [];
@@ -61,7 +61,7 @@ function Cat(x,y){
 
 function draw(){    
     var background = new Image();
-    background.src = "images/background.jpg";
+    background.src = "Assets/images/background.jpg";
 
     background.onload = function(){
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
