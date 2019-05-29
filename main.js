@@ -61,10 +61,10 @@ function Cat(x,y){
 
 function draw(){    
     var background = new Image();
-    background.src = "Assets/img/background.jpg";
-    
-    background.onload = function() {
-        ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+    background.src = "images/background.gif";
+
+    background.onload = function(){
+        context.drawImage(background, -100, -100, canvas.width, canvas.height);
     }
 
     for(var i=0; i<noOCats;i++){
@@ -77,5 +77,6 @@ function update(){
     draw();
     window.requestAnimationFrame(update);
 }
-
+    
 update();
+
